@@ -10,13 +10,13 @@ import ShopContextProvider from './context/ShopContext.jsx'
 function Layout() {
   return (
     <>
-    <ShopContextProvider>
+    
     <ToastContainer />
     <Navbar />
     <SearchBar />
     <Outlet />
     <Footer />
-    </ShopContextProvider>
+    
     </>
   )
 }

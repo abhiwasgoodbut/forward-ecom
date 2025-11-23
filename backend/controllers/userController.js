@@ -2,6 +2,7 @@ import userModel from "../models/userModel.js";
 import validator from 'validator';
 import bcrypt, { hash } from "bcrypt";
 import jwt from 'jsonwebtoken';
+import cookieParser from "cookie-parser";
 
 const createToken = (id) => {
     return jwt.sign({id},process.env.JWT_SECRET)
@@ -25,7 +26,13 @@ const loginUser = async (req,res) => {
             if (isMatch) {
                 
                 const token = createToken(user._id);
-                res.json({success: true, token})
+                 res.cookie("token", token, {
+                    httpOnly: true,
+                    secure: false,           // change to true ONLY if using HTTPS
+                    sameSite: "lax",         // "none" if frontend & backend are different domains
+                    maxAge: 7 * 24 * 60 * 60 * 1000
+                });
+                res.json({success: true, message: "Login succesfully",token})
 
             }else{
                 res.json({success: false, message: "Invalid credentials"})
@@ -79,8 +86,15 @@ const registerUser = async (req,res) => {
             const user = await newUser.save();
 
             const token = createToken(user._id)
+           res.cookie("token", token, {
+            httpOnly: true,
+            secure: false,           // change to true ONLY if using HTTPS
+            sameSite: "lax",         // "none" if frontend & backend are different domains
+            maxAge: 7 * 24 * 60 * 60 * 1000
+});
 
-            res.json({success: true, token})
+
+            res.json({success: true, message: "Login success",token})
 
     } catch (error) {
         console.log(error);
