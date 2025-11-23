@@ -22,6 +22,14 @@ const addProduct = async (req,res) => {
                 return result.secure_url
             })
         )
+
+        let parsedSizes = [];
+try {
+  parsedSizes = JSON.parse(sizes);
+} catch (err) {
+  parsedSizes = [];
+}
+
         
        const productData = {
         name,
@@ -30,7 +38,7 @@ const addProduct = async (req,res) => {
         price : Number(price),
         subCategory,
         bestseller: bestseller === "true" ? true : false,
-        sizes: JSON.parse(sizes),
+        sizes: parsedSizes,
         image: imagesUrl,
         date: Date.now()
  
@@ -59,7 +67,7 @@ const listProduct = async (req, res) => {
     try {
         
         const products = await productModel.find({});
-        res.json({succes: true, products})
+        res.json({success: true, products})
 
     } catch (error) {
         console.log(error);
