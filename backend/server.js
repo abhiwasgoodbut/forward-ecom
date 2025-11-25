@@ -6,6 +6,8 @@ import connectCloudinary from './config/cloudinary.js'
 import userRouter from './routes/userRoute.js'
 import productRouter from './routes/productRoute.js'
 import cookieParser from "cookie-parser";
+import cartRouter from './routes/cartRoute.js'
+import orderRouter from './routes/orderRoute.js'
 
 // App Config
  const app = express()
@@ -16,10 +18,7 @@ import cookieParser from "cookie-parser";
  //middlewares
 
  app.use(express.json())
- app.use(cors({
-    origin: "http://localhost:5173",
-    credentials: true
-}));
+ app.use(cors());
  app.use(cookieParser());
 
 
@@ -27,6 +26,8 @@ import cookieParser from "cookie-parser";
 
  app.use('/api/user', userRouter)
  app.use('/api/product', productRouter)
+ app.use('/api/cart', cartRouter)
+ app.use('/api/order', orderRouter)
 
  app.get('/', (req, res)=>{
     res.send("API Working")

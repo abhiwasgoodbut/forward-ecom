@@ -26,7 +26,7 @@ function Login() {
     event.preventDefault();
     try {
       if (currentState ==='Sign Up') {
-        const response = await axios.post(backendUrl + '/api/user/register',{name,email,password},{ withCredentials: true })
+        const response = await axios.post(backendUrl + '/api/user/register',{name,email,password})
         if(response.data.success){
             
             setToken(response.data.token)
@@ -40,7 +40,7 @@ function Login() {
         
       }else {
 
-        const response = await axios.post( backendUrl + '/api/user/login', {email, password}, {withCredentials: true})
+        const response = await axios.post( backendUrl + '/api/user/login', {email, password})
         
         if (response.data.success) {
             setToken(response.data.token)
