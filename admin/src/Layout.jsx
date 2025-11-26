@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar'
 import Sidebar from "../components/Sidebar"
 import Login from '../components/login'
 import { ToastContainer } from 'react-toastify';
-import { TokenContext } from './context/Context'
+import { TokenContext } from './context/Context.jsx'
 import { useContext } from 'react'
 
 
