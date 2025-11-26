@@ -10,7 +10,8 @@ const adminAuth = async (req,res,next) => {
         if (token_decode !== process.env.ADMIN_EMAIL + process.env.ADMIN_PASSWORD) {
             return res.json({success: false, message: "not auth login again"})
         }
-        console.log(token_decode);
+        // console.log(token_decode);
+        // console.log(token_decode);
         
 
         next()

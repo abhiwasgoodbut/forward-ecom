@@ -11,6 +11,7 @@ import PlaceOrder from './pages/PlaceOrder'
 import Order from './pages/Order'
 import { createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom'
 import Layout from './Layout'
+import Verify from './pages/Verify'
 
 
 
@@ -29,6 +30,7 @@ function App() {
       <Route path='login' element={<Login />} />
       <Route path='place-order' element={<PlaceOrder />} />
       <Route path='order' element={<Order />} />
+      <Route path='verify' element={<Verify />} />
     </Route>
   )
 );

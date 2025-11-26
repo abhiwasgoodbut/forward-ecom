@@ -29,7 +29,7 @@ function Order() {
             allOrderItem.push(item)
           })
         })
-        console.log(allOrderItem);
+        //console.log(allOrderItem);
         
         setOrderData(allOrderItem.reverse());
         
