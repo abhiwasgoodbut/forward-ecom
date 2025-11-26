@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import { assets } from '../src/assets/assets'
 import axios from 'axios'
 import { backendUrl } from '../src/Layout'
-import { TokenContext } from '../src/context/context'
+import { TokenContext } from '../src/context/Context.jsx'
 import { toast } from 'react-toastify'
 import Login from '../components/login'
 const Add = () => {

@@ -6,7 +6,7 @@ import { backendUrl, currency } from "../src/Layout";
 import { toast } from "react-toastify";
 import { assets } from "../src/assets/assets";
 import { useContext } from "react";
-import { TokenContext } from "../src/context/context";
+import { TokenContext } from "../src/context/Context.jsx";
 
 
 const Order = () => {

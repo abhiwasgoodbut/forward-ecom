@@ -3,7 +3,7 @@ import { useEffect, useContext } from 'react'
 import { useState } from 'react'
 import { backendUrl, currency } from '../src/Layout'
 import axios from 'axios'
-import { TokenContext } from '../src/context/context'
+import { TokenContext } from '../src/context/Context.jsx'
 import { toast } from 'react-toastify'
 
 
