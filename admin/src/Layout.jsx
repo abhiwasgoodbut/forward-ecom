@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Sidebar from "../components/Sidebar"
-import Login from '../components/login'
+import Login from '../components/Login.jsx'
 import { ToastContainer } from 'react-toastify';
 import { TokenContext } from './context/Context.jsx'
 import { useContext } from 'react'
