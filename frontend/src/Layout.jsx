@@ -11,7 +11,11 @@ import Snowfall from 'react-snowfall'
 function Layout() {
   return (
     <>
-    <Snowfall color='#82C3D9'/>
+    <Snowfall style={{
+    position: 'fixed',
+    width: '100vw',
+    height: '100vh',
+  }} color='#82C3D9'/>
     <ToastContainer />
     <Navbar />
     <SearchBar />
