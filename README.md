@@ -70,7 +70,7 @@ Backend: https://forward-backend.vercel.app
 ---
 
 ## 📂 Project Structure
-
+```bash
 Forever-Ecommerce/
 │
 ├── frontend/
@@ -103,7 +103,10 @@ cd forever-ecommerce
 cd frontend
 npm install
 npm run dev
+```
+
 Backend
+```bash
 cd backend
 npm install
 npm start
@@ -111,6 +114,7 @@ PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 STRIPE_SECRET_KEY=your_stripe_secret_key
+```
 👨‍💻 Developer
 
 Abhinay Singh
