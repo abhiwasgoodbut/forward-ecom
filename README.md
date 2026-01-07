@@ -92,7 +92,7 @@ Forever-Ecommerce/
 └── README.md
 
 
----
+```
 
 ## ⚙️ Installation & Setup
 
